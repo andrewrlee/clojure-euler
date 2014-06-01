@@ -1,17 +1,21 @@
 (ns euler.core-test
-   (:use [midje.sweet]
-         [clojure.string :as str])
+   (:use [midje.sweet])
    (:require
-            
-            [euler.core :refer :all]))
+         [euler.core :refer :all]))
 
-(facts "All about splitting"
-    (facts "about `split` one"
-           (str/split "a/b/c" #"/") => ["a" 1 "b" "c"]
-           (str/split "" #"irrelvant") => [""]
-           (str/split "no regexp matches" #"a+\s+[ab]") => ["no regexp matches"])
-     (facts "about `split` two"
-            (str/split "a/b/c" #"/") => ["a" "b" "c"]
-            (str/split "" #"irrelvant") => [""]
-            (str/split "no regexp matches" #"a+\s+[ab]") => ["no regexp matches"])  
+
+
+(facts "Euler Solutions"
+    (fact "Euler Problem 1"
+           (euler-1) => 233168)
+     (facts "Euler Problem 2"
+           (euler-2) => 4613732)
+     ;(facts "Euler Problem 3"
+     ;      (euler-3) => 6857)
+     (facts "Euler Problem 4"
+           (euler-4) => 906609)
+     (facts "Euler Problem 5"
+           (euler-5) => 232792560)
+     (facts "Euler Problem 6"
+           (euler-6) => 25164150)
 )
