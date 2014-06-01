@@ -1,4 +1,4 @@
 clojure-euler
 =============
 
-learning clojure through euler
+learning clojure through the euler project
