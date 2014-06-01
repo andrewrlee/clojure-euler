@@ -22,4 +22,5 @@
       (let [new-seq (filter #(or (= % p) (not= 0 (mod % p))) coll)
             new-p (first (filter #(> % p) new-seq))]
         (recur new-p new-seq)))))
-                         
+
+(defn euler-3 [] "not implemented")
