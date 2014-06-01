@@ -1,7 +1,17 @@
 (ns euler.core-test
-  (:require [clojure.test :refer :all]
+   (:use [midje.sweet]
+         [clojure.string :as str])
+   (:require
+            
             [euler.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXED."
-    (is (= 1 1))))
+(facts "All about splitting"
+    (facts "about `split` one"
+           (str/split "a/b/c" #"/") => ["a" 1 "b" "c"]
+           (str/split "" #"irrelvant") => [""]
+           (str/split "no regexp matches" #"a+\s+[ab]") => ["no regexp matches"])
+     (facts "about `split` two"
+            (str/split "a/b/c" #"/") => ["a" "b" "c"]
+            (str/split "" #"irrelvant") => [""]
+            (str/split "no regexp matches" #"a+\s+[ab]") => ["no regexp matches"])  
+)
