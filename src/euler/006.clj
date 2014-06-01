@@ -1,5 +1,4 @@
-(ns euler.core
-  (:gen-class))
+(in-ns 'euler.core)
 
 ;The sum of the squares of the first ten natural numbers is,
 
