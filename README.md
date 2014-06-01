@@ -4,19 +4,13 @@ clojure-euler [![Build Status](https://travis-ci.org/plasma147/clojure-euler.svg
 learning clojure through the euler project 
 ## Usage
 
+Execute tests by running midje: 
 
-    $ java -jar euler-0.1.0-standalone.jar [args]
-
-## Options
-
-
-## Examples
-
-...
+    $ lein midje
 
 ### Bugs
 
-...
+003.clj does not work.
 
 
 
