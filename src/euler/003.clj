@@ -5,21 +5,24 @@
 ;What is the largest prime factor of the number 600851475143 ?
 
 ;===========================================================
-;Create a list of consecutive integers from 2 through n: (2, 3, 4, ..., n).
 
-;Initially, let p equal 2, the first prime number.
+(def target 600851475143)
 
-;Starting from p, enumerate its multiples by counting to n in increments of p, and mark them in the list (these will be 2p, 3p, 4p, etc.; the p itself should not be marked).
-;Find the first number greater than p in the list that is not marked. If there was no such number, stop. Otherwise, let p now equal this new number (which is the next prime), and repeat from step 3.
+(def max-number (int (Math/sqrt target)))
+
+(def primes-from-sqrt-of-target
+  "adapted from http://stackoverflow.com/questions/960980/fast-prime-number-generation-in-clojure"
+  (filter prime? (range max-number 1 -1))) 
 
 ;===========================================================
 
-(defn primes [n]
-  (loop [p 2 coll (range 2 n)] 
-    (if (> p (Math/sqrt n))
-      coll
-      (let [new-seq (filter #(or (= % p) (not= 0 (mod % p))) coll)
-            new-p (first (filter #(> % p) new-seq))]
-        (recur new-p new-seq)))))
+(def target 600851475143)
 
-(defn euler-3 [] "not implemented")
+(defn less-than-max? [n] (do (println n"<" max-number)(< n max-number)))
+
+(defn is-evenly-divisible? [n] 
+  (do 
+  (= 0 (mod 600851475143 n))))  
+
+(defn euler-3 [] 
+  (first (filter is-evenly-divisible? primes-from-sqrt-of-target))) 

@@ -1,5 +1,10 @@
 (ns euler.core
-  (:gen-class))
+  (:gen-class)
+  (:require
+     [euler.core :refer :all]
+     [euler.prime :refer :all]))
+
+  
 
 (def src-directory (clojure.java.io/file "./src/euler/"))
 

@@ -10,7 +10,6 @@ Execute tests by running midje:
 
 ### Bugs
 
-003.clj does not work.
 
 
 

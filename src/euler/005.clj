@@ -6,11 +6,6 @@
 
 ;===========================================================
 
-(defn sieve [s]
-  (cons (first s) (lazy-seq (sieve (filter #(not= 0 (mod % (first s))) (rest s))))))
-
-(def primes (sieve (iterate inc 2)))
-
 (defn division-result-if-evenly-divisible [numerator, denominator]
   "Returns the result of the division if evenly divisible, otherwise the numerator"
   (let [result    (quot numerator denominator)
