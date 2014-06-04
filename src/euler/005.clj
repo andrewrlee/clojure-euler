@@ -4,6 +4,9 @@
 
 ;What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
+;An implementation of the table algorithm from here: 
+;    http://en.wikipedia.org/wiki/Least_common_multiple#A_method_using_a_table
+
 ;===========================================================
 
 (defn division-result-if-evenly-divisible [numerator, denominator]

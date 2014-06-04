@@ -20,9 +20,9 @@
 
 (defn less-than-max? [n] (do (println n"<" max-number)(< n max-number)))
 
-(defn is-evenly-divisible? [n] 
+(defn is-even-divisor-of-target? [n] 
   (do 
-  (= 0 (mod 600851475143 n))))  
+  (= 0 (mod target n))))  
 
 (defn euler-3 [] 
-  (first (filter is-evenly-divisible? primes-from-sqrt-of-target))) 
+  (first (filter is-even-divisor-of-target? primes-from-sqrt-of-target))) 
