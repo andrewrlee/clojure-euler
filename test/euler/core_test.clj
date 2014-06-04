@@ -18,4 +18,7 @@
            (euler-6) => 25164150)
      (facts "Euler Problem 7"
            (euler-7) => 104743)
+     (facts "Euler Problem 8"
+           (euler-8) => 23514624000)
 )
+
