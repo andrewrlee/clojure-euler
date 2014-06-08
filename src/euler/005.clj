@@ -9,7 +9,7 @@
 
 ;===========================================================
 
-(defn division-result-if-evenly-divisible [numerator, denominator]
+(defn evenly-divisible-numerator [numerator, denominator]
   "Returns the result of the division if evenly divisible, otherwise the numerator"
   (let [result    (quot numerator denominator)
         remainder (mod numerator denominator)]
@@ -23,7 +23,7 @@
     (if (every? #(= % 1) results)
       (reduce * top-row)
       (let [this-prime (first primes)
-            next-results (map #(division-result-if-evenly-divisible % this-prime) results)]
+            next-results (map #(evenly-divisible-numerator % this-prime) results)]
       (if (= next-results results)
         (recur next-results top-row (rest primes)) 
         (recur next-results (conj top-row this-prime) primes))))))   
